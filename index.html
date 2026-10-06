@@ -1,142 +1,1377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#18251f">
-  <title>Olive & Ember — Seasonal Kitchen</title>
-  <meta name="description" content="Seasonal plates, thoughtful wine, and warm hospitality at Olive & Ember.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #18251f;
-      --cream: #f6f2e9;
-      --paper: #fffdf8;
-      --olive: #7b8653;
-      --rust: #c66b45;
-      --muted: #77766c;
-      --line: rgba(24, 37, 31, .14);
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "DM Sans", Arial, sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chanakya Koilada | QA Analyst → DevOps Engineer</title>
+
+    <meta name="description"
+          content="Portfolio of Chanakya Koilada — Systems Quality Assurance Analyst passionate about DevOps, Cloud, Automation and Continuous Delivery.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #070b14;
+            --bg-secondary: #0d1320;
+            --card: rgba(18, 26, 42, 0.75);
+            --border: rgba(255,255,255,0.08);
+            --text: #f5f7fb;
+            --muted: #9aa7ba;
+            --accent: #6c8cff;
+            --accent-2: #00d4ff;
+            --success: #35d49a;
+            --shadow: 0 20px 60px rgba(0,0,0,.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(108,140,255,.12), transparent 30%),
+                radial-gradient(circle at 90% 20%, rgba(0,212,255,.08), transparent 25%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(18px);
+            background: rgba(7,11,20,.72);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .logo span {
+            color: var(--accent-2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: .92rem;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 7px 13px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.035);
+            border-radius: 100px;
+            color: var(--muted);
+            font-size: .82rem;
+            margin-bottom: 25px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(53,212,154,.8);
+        }
+
+        h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            background: linear-gradient(100deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            color: var(--muted);
+            font-size: 1.08rem;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: .9rem;
+            transition: .3s;
+            border: 1px solid var(--border);
+        }
+
+        .btn-primary {
+            background: linear-gradient(100deg, var(--accent), var(--accent-2));
+            color: #06101a;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,.04);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ================= TERMINAL ================= */
+
+        .terminal {
+            background: #090e18;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transform: perspective(1000px) rotateY(-4deg);
+        }
+
+        .terminal-header {
+            height: 42px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 0 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #555;
+        }
+
+        .terminal-body {
+            padding: 25px;
+            font-family: "JetBrains Mono", monospace;
+            font-size: .84rem;
+            color: #aebbd0;
+        }
+
+        .terminal-line {
+            margin: 9px 0;
+        }
+
+        .prompt {
+            color: var(--success);
+        }
+
+        .command {
+            color: #fff;
+        }
+
+        .output {
+            color: #8290a8;
+        }
+
+        .highlight {
+            color: var(--accent-2);
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            color: var(--accent-2);
+            font-family: "JetBrains Mono", monospace;
+            font-size: .8rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -1.5px;
+        }
+
+        .section-subtitle {
+            color: var(--muted);
+            max-width: 650px;
+            margin-top: 12px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .glass-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+            backdrop-filter: blur(15px);
+            box-shadow: var(--shadow);
+        }
+
+        .glass-card p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            border-left: 3px solid var(--accent);
+            padding-left: 18px;
+            color: #dce3ef !important;
+            font-style: italic;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.025);
+            border-radius: 15px;
+            transition: .3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(108,140,255,.4);
+        }
+
+        .skill-icon {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 7px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        /* ================= EXPERIENCE ================= */
+
+        .timeline {
+            position: relative;
+            max-width: 850px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 9px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 4px;
+            top: 7px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 15px rgba(108,140,255,.7);
+        }
+
+        .timeline-date {
+            font-family: "JetBrains Mono", monospace;
+            color: var(--accent-2);
+            font-size: .8rem;
+        }
+
+        .timeline-item h3 {
+            margin: 5px 0;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project {
+            position: relative;
+            padding: 28px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,.045),
+                rgba(255,255,255,.015)
+            );
+            transition: .35s;
+        }
+
+        .project:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0,212,255,.3);
+        }
+
+        .project-number {
+            font-family: "JetBrains Mono", monospace;
+            color: var(--accent);
+            font-size: .8rem;
+        }
+
+        .project h3 {
+            margin: 12px 0;
+            font-size: 1.25rem;
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .tag {
+            padding: 5px 9px;
+            border-radius: 6px;
+            background: rgba(108,140,255,.1);
+            color: #aabaff;
+            font-family: "JetBrains Mono", monospace;
+            font-size: .7rem;
+        }
+
+        /* ================= LEARNING ================= */
+
+        .learning {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .learning-item {
+            padding: 23px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: rgba(255,255,255,.025);
+        }
+
+        .learning-item h3 {
+            margin-bottom: 8px;
+        }
+
+        .learning-item p {
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        .progress {
+            height: 5px;
+            background: rgba(255,255,255,.07);
+            border-radius: 10px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .progress span {
+            display: block;
+            height: 100%;
+            width: 75%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            border-radius: inherit;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-box {
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .contact-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .social {
+            padding: 11px 17px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            color: var(--muted);
+            transition: .3s;
+        }
+
+        .social:hover {
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: .85rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 850px) {
+
+            .hero-grid,
+            .about-grid,
+            .learning {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .terminal {
+                transform: none;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 72px;
+                right: 5%;
+                width: 220px;
+                padding: 20px;
+                flex-direction: column;
+                background: #0c1320;
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 520px) {
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .hero {
+                padding-top: 110px;
+            }
+        }
+
+        /* ================= ANIMATIONS ================= */
+
+        .fade-up {
+            animation: fadeUp .8s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+    <div class="container">
+        <nav>
+
+            <a href="#home" class="logo">
+                chanakya<span>.dev</span>
+            </a>
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-grid">
+
+            <div class="fade-up">
+
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    Currently learning & building
+                </div>
+
+                <h1>
+                    Hi, I'm<br>
+                    <span>Chanakya.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Systems Quality Assurance Analyst with a passion for
+                    automation, cloud technologies and DevOps.
+                    Currently building my skills to transition into the
+                    world of DevOps and Cloud Engineering.
+                </p>
+
+                <div class="buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        View My Work
+                    </a>
+
+                    <a href="#contact" class="btn btn-secondary">
+                        Let's Connect
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="terminal fade-up">
+
+                <div class="terminal-header">
+                    <span class="circle"></span>
+                    <span class="circle"></span>
+                    <span class="circle"></span>
+                </div>
+
+                <div class="terminal-body">
+
+                    <div class="terminal-line">
+                        <span class="prompt">chanakya@dev:~$</span>
+                        <span class="command"> whoami</span>
+                    </div>
+
+                    <div class="terminal-line output">
+                        Chanakya Koilada
+                    </div>
+
+                    <div class="terminal-line">
+                        <span class="prompt">chanakya@dev:~$</span>
+                        <span class="command"> role</span>
+                    </div>
+
+                    <div class="terminal-line output">
+                        QA Analyst → <span class="highlight">DevOps Engineer</span>
+                    </div>
+
+                    <div class="terminal-line">
+                        <span class="prompt">chanakya@dev:~$</span>
+                        <span class="command"> skills</span>
+                    </div>
+
+                    <div class="terminal-line output">
+                        Linux · Git · Docker<br>
+                        AWS · Azure · Jenkins<br>
+                        Kubernetes · Bash · CI/CD
+                    </div>
+
+                    <div class="terminal-line">
+                        <span class="prompt">chanakya@dev:~$</span>
+                        <span class="command"> ./keep_learning.sh</span>
+                    </div>
+
+                    <div class="terminal-line highlight">
+                        ✓ Learning never stops...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">// ABOUT ME</div>
+
+            <h2>Building today.<br>Preparing for tomorrow.</h2>
+
+            <p class="section-subtitle">
+                A little bit about who I am and where I'm heading.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="glass-card">
+
+                <p>
+                    I'm <strong>Chanakya Koilada</strong>, currently working
+                    as a <strong>Systems Quality Assurance Analyst</strong>.
+                    My professional experience has given me a strong
+                    understanding of software quality, requirements,
+                    testing and collaboration between business and
+                    development teams.
+                </p>
+
+                <p>
+                    Over time, I've developed a strong interest in
+                    <strong>DevOps, Cloud Computing and Automation</strong>.
+                    I'm actively learning the tools and technologies
+                    required to move from traditional testing into a
+                    DevOps-focused engineering role.
+                </p>
+
+                <p class="quote">
+                    "The goal isn't just to learn tools. It's to understand
+                    how they work together to build, deploy and maintain
+                    reliable software."
+                </p>
+
+            </div>
+
+
+            <div class="glass-card">
+
+                <h3>What I'm working towards</h3>
+
+                <br>
+
+                <p>→ Building strong Linux fundamentals</p>
+                <p>→ Learning Git & version control</p>
+                <p>→ Building CI/CD pipelines</p>
+                <p>→ Working with Docker & containers</p>
+                <p>→ Understanding Kubernetes</p>
+                <p>→ Developing AWS & Azure knowledge</p>
+                <p>→ Automating repetitive tasks</p>
+                <p>→ Becoming a DevOps / Cloud Engineer</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">// TECHNOLOGIES</div>
+
+            <h2>Tools I'm learning & working with.</h2>
+
+            <p class="section-subtitle">
+                My current DevOps learning journey spans Linux,
+                containers, cloud, CI/CD and automation.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon">🐧</div>
+                <h3>Linux</h3>
+                <p>
+                    Linux fundamentals, shell commands, permissions,
+                    processes, services, networking and troubleshooting.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="skill-icon">🔀</div>
+                <h3>Git</h3>
+                <p>
+                    Version control, branches, merging, repositories,
+                    commits and collaborative development workflows.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="skill-icon">🐳</div>
+                <h3>Docker</h3>
+                <p>
+                    Images, containers, volumes, networks, Dockerfiles
+                    and containerized applications.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="skill-icon">⚙️</div>
+                <h3>Jenkins</h3>
+                <p>
+                    CI/CD concepts, pipelines, builds, artifacts and
+                    automated software delivery.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="skill-icon">☁️</div>
+                <h3>AWS</h3>
+                <p>
+                    Exploring EC2, VPC, IAM, security groups, load
+                    balancing and cloud infrastructure.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="skill-icon">🔷</div>
+                <h3>Azure</h3>
+                <p>
+                    Learning Azure networking, virtual machines,
+                    AKS and cloud infrastructure concepts.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="skill-icon">☸️</div>
+                <h3>Kubernetes</h3>
+                <p>
+                    Learning containers orchestration, pods, services,
+                    deployments, ingress and cluster concepts.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>Bash</h3>
+                <p>
+                    Shell scripting and automation for repetitive
+                    administration and DevOps tasks.
+                </p>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="skill-icon">🧪</div>
+                <h3>QA & Testing</h3>
+                <p>
+                    Test planning, test cases, requirement analysis,
+                    validation and production testing.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">// EXPERIENCE</div>
+
+            <h2>My professional journey.</h2>
+
+            <p class="section-subtitle">
+                Experience in software quality with a growing focus
+                on DevOps and cloud engineering.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <span class="timeline-dot"></span>
+
+                <div class="timeline-date">
+                    CURRENT
+                </div>
+
+                <h3>Systems Quality Assurance Analyst</h3>
+
+                <p>
+                    Working on software quality assurance, requirement
+                    analysis, test case creation, test execution and
+                    production validation.
+                </p>
+
+                <p>
+                    Collaborating with business and development teams
+                    to understand requirements and ensure reliable
+                    software delivery.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <span class="timeline-dot"></span>
+
+                <div class="timeline-date">
+                    DEVOPS JOURNEY
+                </div>
+
+                <h3>Transitioning into DevOps & Cloud</h3>
+
+                <p>
+                    Actively building hands-on knowledge across Linux,
+                    Git, Docker, Jenkins, AWS, Azure, Kubernetes,
+                    networking and automation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">// PROJECTS</div>
+
+            <h2>Things I've been building.</h2>
+
+            <p class="section-subtitle">
+                Hands-on projects are an important part of my DevOps
+                learning journey.
+            </p>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <div class="project">
+
+                <div class="project-number">01 / DEVOPS</div>
+
+                <h3>Dockerized Application</h3>
+
+                <p>
+                    Containerized an application using Docker while
+                    exploring images, containers, networking, volumes,
+                    port mapping and Docker Compose.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">Docker Compose</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">02 / CI-CD</div>
+
+                <h3>Jenkins CI Pipeline</h3>
+
+                <p>
+                    Built and explored Jenkins jobs to understand
+                    automated builds, Git integration, workspaces,
+                    artifacts and continuous integration.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">CI/CD</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">03 / CLOUD</div>
+
+                <h3>AWS Infrastructure Lab</h3>
+
+                <p>
+                    Hands-on exploration of AWS infrastructure including
+                    EC2, VPC, subnets, security groups, IAM and
+                    load-balancing concepts.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">EC2</span>
+                    <span class="tag">VPC</span>
+                    <span class="tag">IAM</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">04 / AUTOMATION</div>
+
+                <h3>Testing & Automation</h3>
+
+                <p>
+                    Exploring automation to reduce repetitive manual
+                    work and improve reliability across testing and
+                    infrastructure workflows.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Bash</span>
+                    <span class="tag">Automation</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LEARNING ================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">// CURRENTLY LEARNING</div>
+
+            <h2>My DevOps roadmap.</h2>
+
+            <p class="section-subtitle">
+                The technologies I'm focusing on to make the transition
+                into DevOps engineering.
+            </p>
+
+        </div>
+
+
+        <div class="learning">
+
+            <div class="learning-item">
+
+                <h3>🐧 Linux & Networking</h3>
+
+                <p>
+                    Commands, processes, services, permissions,
+                    SSH, DNS, networking and troubleshooting.
+                </p>
+
+                <div class="progress">
+                    <span style="width: 85%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="learning-item">
+
+                <h3>🔀 Git & CI/CD</h3>
+
+                <p>
+                    Git workflows, Jenkins, pipelines, builds,
+                    artifacts and deployment automation.
+                </p>
+
+                <div class="progress">
+                    <span style="width: 70%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="learning-item">
+
+                <h3>🐳 Docker & Kubernetes</h3>
+
+                <p>
+                    Containerization, networking, volumes,
+                    orchestration and application deployment.
+                </p>
+
+                <div class="progress">
+                    <span style="width: 65%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="learning-item">
+
+                <h3>☁️ Cloud Engineering</h3>
+
+                <p>
+                    AWS and Azure infrastructure, networking,
+                    security and cloud architecture.
+                </p>
+
+                <div class="progress">
+                    <span style="width: 55%"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="section-label">// GET IN TOUCH</div>
+
+            <h2>
+                Let's build something
+                <span style="color:var(--accent-2)">
+                    awesome.
+                </span>
+            </h2>
+
+            <p>
+                I'm always interested in connecting with people in
+                DevOps, Cloud, Automation and Software Engineering.
+                Whether it's an opportunity, collaboration or simply
+                a conversation about technology — feel free to reach out.
+            </p>
+
+
+            <div class="socials">
+
+                <!-- Replace these links with your actual profiles -->
+
+                <a class="social"
+                   href="https://www.linkedin.com/"
+                   target="_blank">
+                    LinkedIn ↗
+                </a>
+
+                <a class="social"
+                   href="https://github.com/"
+                   target="_blank">
+                    GitHub ↗
+                </a>
+
+                <a class="social"
+                   href="mailto:your-email@example.com">
+                    Email ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <span>
+                © 2026 Chanakya Koilada
+            </span>
+
+            <span>
+                Built with HTML & CSS · Learning DevOps 🚀
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+
+        const nav = document.getElementById("navLinks");
+
+        nav.classList.toggle("active");
+
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
-    a { color: inherit; text-decoration: none; }
-    button, input, select { font: inherit; }
-    img { display: block; max-width: 100%; }
 
-    .topbar {
-      min-height: 38px; display: flex; justify-content: center; align-items: center;
-      padding: 8px 20px; background: var(--ink); color: #f8f4e9;
-      font-size: 11px; letter-spacing: .16em; text-align: center; text-transform: uppercase;
-    }
+    // Close mobile menu after clicking a link
 
-    header {
-      position: absolute; z-index: 5; top: 38px; left: 0; width: 100%;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 25px 7.5%; color: white;
-    }
-    .logo { font: 600 25px var(--serif); letter-spacing: -.04em; }
-    .logo span { color: #dfaa80; }
-    nav { display: flex; align-items: center; gap: 34px; font-size: 13px; }
-    nav a:not(.nav-cta) { opacity: .9; transition: opacity .2s; }
-    nav a:not(.nav-cta):hover { opacity: .65; }
-    .nav-cta, .button {
-      display: inline-flex; justify-content: center; align-items: center;
-      padding: 13px 20px; border: 1px solid rgba(255,255,255,.75);
-      border-radius: 2px; color: white; font-size: 12px; letter-spacing: .08em;
-      text-transform: uppercase; transition: .2s ease;
-    }
-    .nav-cta:hover { background: white; color: var(--ink); }
-    .menu-toggle { display: none; border: 0; background: none; color: white; font-size: 25px; cursor: pointer; }
+    document.querySelectorAll(".nav-links a").forEach(link => {
 
-    .hero {
-      position: relative; min-height: 690px; height: min(850px, 92vh);
-      display: flex; align-items: center; overflow: hidden; color: white;
-      background: #30372b url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2200&q=85") center 55% / cover no-repeat;
-    }
-    .hero::before {
-      position: absolute; inset: 0; content: "";
-      background: linear-gradient(90deg, rgba(15,24,19,.78), rgba(15,24,19,.36) 55%, rgba(15,24,19,.12)),
-                  linear-gradient(0deg, rgba(15,24,19,.18), transparent 45%);
-    }
-    .hero-content { position: relative; width: min(680px, 85%); margin: 50px 0 0 12%; }
-    .eyebrow { margin: 0 0 20px; color: #dfb294; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { max-width: 650px; margin-bottom: 22px; font: 500 clamp(52px, 7vw, 88px)/1.02 var(--serif); letter-spacing: -.045em; }
-    .hero-copy { max-width: 440px; margin-bottom: 32px; color: rgba(255,255,255,.83); font-size: 15px; line-height: 1.8; }
-    .button { gap: 16px; padding: 15px 21px; border-color: #d6a47e; background: #c66b45; }
-    .button:hover { background: #a95131; border-color: #a95131; }
-    .hero-note { position: absolute; bottom: 36px; right: 7.5%; color: rgba(255,255,255,.75); font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
+        link.addEventListener("click", () => {
 
-    .intro {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 9%;
-      align-items: center; padding: 115px 12%;
-    }
-    .intro-image { position: relative; min-height: 420px; }
-    .intro-image img { width: 100%; height: 420px; object-fit: cover; }
-    .image-label {
-      position: absolute; right: -20px; bottom: 22px; padding: 17px 22px;
-      background: var(--olive); color: white; font: 16px var(--serif);
-    }
-    .section-kicker { margin-bottom: 16px; color: var(--rust); font-size: 11px; letter-spacing: .19em; text-transform: uppercase; }
-    h2 { margin-bottom: 20px; font: 500 clamp(35px, 4.4vw, 55px)/1.1 var(--serif); letter-spacing: -.035em; }
-    .intro-copy p:not(.section-kicker) { color: var(--muted); font-size: 14px; line-height: 1.9; }
-    .text-link { display: inline-block; margin-top: 13px; padding-bottom: 7px; border-bottom: 1px solid var(--rust); color: var(--ink); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+            document
+                .getElementById("navLinks")
+                .classList.remove("active");
 
-    .menu-section { padding: 100px 9%; background: var(--cream); }
-    .section-heading { max-width: 570px; margin: 0 auto 46px; text-align: center; }
-    .section-heading p:last-child { color: var(--muted); font-size: 14px; line-height: 1.7; }
-    .dishes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1150px; margin: auto; }
-    .dish { background: var(--paper); }
-    .dish img { width: 100%; height: 225px; object-fit: cover; }
-    .dish-info { padding: 21px 22px 24px; }
-    .dish-title { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 9px; font: 500 20px var(--serif); }
-    .dish-price { color: var(--rust); font: 16px var(--sans); white-space: nowrap; }
-    .dish-info p { margin-bottom: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
-    .menu-action { margin-top: 36px; text-align: center; }
-    .button-dark { border-color: var(--ink); background: var(--ink); }
+        });
 
-    .quote {
-      padding: 95px 20px; background: var(--olive); color: white; text-align: center;
-    }
-    .quote .stars { margin-bottom: 20px; color: #f0c48a; letter-spacing: .25em; }
-    .quote blockquote { max-width: 790px; margin: 0 auto 23px; font: 500 clamp(25px, 4vw, 42px)/1.35 var(--serif); }
-    .quote cite { font-size: 11px; font-style: normal; letter-spacing: .16em; text-transform: uppercase; }
+    });
 
-    .visit {
-      display: grid; grid-template-columns: 1fr 1fr; min-height: 560px;
-      background: var(--paper);
-    }
-    .visit-photo { min-height: 500px; background: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85") center / cover; }
-    .visit-content { display: flex; flex-direction: column; justify-content: center; padding: 75px 12%; }
-    .visit-content p:not(.section-kicker) { color: var(--muted); font-size: 14px; line-height: 1.8; }
-    .hours { margin: 12px 0 26px; padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .hours div { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; color: var(--muted); font-size: 12px; }
-    .hours strong { color: var(--ink); font-weight: 500; }
 
-    .reserve { padding: 90px 20px; background: #eee8da; text-align: center; }
-    .reserve-inner { max-width: 740px; margin: auto; }
-    .reserve p:not(.section-kicker) { color: var(--muted); font-size: 14px; }
-    form { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 10px; margin-top: 30px; }
-    input, select { width: 100%; min-height: 49px; padding: 0 13px; border: 1px solid #d8d0c1; border-radius: 0; background: var(--paper); color: var(--ink); font-size: 12px; }
-    form button { min-height: 49px; padding: 0 20px; border: 0; border-radius: 0; background: var(--ink); color: white; font-size: 11px; letter-spacing: .09em; text-transform: uppercase; cursor: pointer; }
-    form button:hover { background: var(--rust); }
+    // Simple reveal animation
 
-    footer { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 30px 8%; background: var(--ink); color: white; }
-    footer .logo { font-size: 21px; }
-    footer p { margin: 0; color: rgba(255,255,255,.65); font-size: 11px; }
-    .socials { display: flex; gap: 19px; color: rgba(255,255,255,.8); font-size: 11px; }
+    const observer = new IntersectionObserver(
 
-    @media (max-width: 800px) {
-      header { padding: 20px 6%; }
-      .menu-toggle { display: block; }
-      nav {
-        display: none; position: absolute; top: 75px; left: 0; right: 0;
-        flex-direction: column; align-items: stretch; gap: 0; padding: 10px 6% 20px;
-        background: var(--ink); color: white;
-   
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+    document
+        .querySelectorAll(".glass-card, .skill-card, .project, .learning-item, .timeline-item")
+        .forEach(element => {
+
+            element.style.opacity = "0";
+            element.style.transform = "translateY(25px)";
+            element.style.transition = "all .7s ease";
+
+            observer.observe(element);
+
+        });
+
+</script>
+
+</body>
+</html>
