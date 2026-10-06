@@ -1,6 +1,9 @@
-FROM httpd:2.4-alipine
-RUN rm -rf /usr/local/apache2/htdocs/*
-COPY --chown=daemon:daemon . /usr/local/apache2/htdocs/
+FROM nginx:1.25-alpine
+MAINTAINER Chanakya
+LABEL This is a Restaurant App
 EXPOSE 80
-USER daemon
-CMD ["httpd-foreground"]
+RUN rm -rf /usr/share/nginx/html/*
+COPY index.html /usr/share/nginx/html/
+RUN chown -R nginx:nginx /usr/share/nginx/html/
+USER nginx
+CMD ["nginx", "-g", "daemon off;"]
